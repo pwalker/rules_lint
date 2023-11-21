@@ -1,0 +1,11 @@
+load("@npm//:prettier/package_json.bzl", prettier_bin = "bin")
+
+# This is just an example of a binary rule, doesn't need to actually be prettier
+
+prettier_bin.prettier_binary(
+    name = "prettier",
+    env = {
+        "BAZEL_BINDIR": ".",
+    },
+    visibility = ["//visibility:public"],
+)
